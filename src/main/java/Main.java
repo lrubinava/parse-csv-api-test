@@ -8,6 +8,8 @@ public class Main {
         int failPercent = 20;
         int fieldCount = 5;
 
+        //TODO: validate CSV file first
+
         // generate
         StringWriter data = new StringWriter();
         BufferedWriter bW = new BufferedWriter(data);
