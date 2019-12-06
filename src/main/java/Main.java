@@ -6,12 +6,12 @@ public class Main {
 
         long count = 30;
         int failPercent = 20;
-        int fieldCount = 5;
+        int fieldCount = 10;
 
-        //TODO: validate CSV file first
+        //TODO: validate CSV file
 
         // generate
-        StringWriter data = new StringWriter();
+        FileWriter data = new FileWriter("customers.txt");
         BufferedWriter bW = new BufferedWriter(data);
 
         CSVGenerator generator = new CSVGenerator();
@@ -20,13 +20,13 @@ public class Main {
         bW.flush();
 
         // process
-        StringReader inputData = new StringReader(data.toString());
+        FileReader inputData = new FileReader("customers.txt");
         // BufferedReader dataReader = new BufferedReader(inputData);
 
-        StringWriter passed = new StringWriter();
+        FileWriter passed = new FileWriter("passed.txt");
         //BufferedWriter passedW = new BufferedWriter(passed);
 
-        StringWriter failed = new StringWriter();
+        FileWriter failed = new FileWriter("failed.txt");
         // BufferedWriter failedW = new BufferedWriter(failed);
 
         try (BufferedReader dataReader = new BufferedReader(inputData)) {
